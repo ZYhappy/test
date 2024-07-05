@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<Type Name="mark::__optional_detail::__optional_storage_base&lt;*,1&gt;">
+		<DisplayString Condition="__value==nullptr">None</DisplayString>
+		<DisplayString Condition="__value!=nullptr">Some({ __value })</DisplayString>
+	</Type>
+	<Type Name="mark::__optional_detail::__optional_storage_base&lt;*,0&gt;">
+		<DisplayString Condition="!__engaged">None</DisplayString>
+		<DisplayString Condition="__engaged">Some({ __value })</DisplayString>
+	</Type>
+	<Type Name="mark::non_null&lt;*&gt;">
+		<DisplayString>non_null { *__ptr }</DisplayString>
+	</Type>
+	<Type Name="mark::__alias_type_base&lt;*&gt;">
+		<DisplayString ExcludeView="notypeid">{ __value }[type_id = { type_id }]</DisplayString>
+		<DisplayString IncludeView="notypeid">{ __value }</DisplayString>
+	</Type>
+	<Type Name="mark::result&lt;*,*&gt;">
+		<DisplayString Condition="value._Which==0">Ok({ value._Head.t })</DisplayString>
+		<DisplayString Condition="value._Which==1">Err({ value._Tail._Head.e })</DisplayString>
+	</Type>
+</AutoVisualizer>
